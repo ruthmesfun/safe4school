@@ -17,7 +17,7 @@ def dirty_word_counter(lyrics, dirty_word_array)
       curse_list << dirty_word if lyric.downcase.include? dirty_word
       end
     end
-  puts curse_list.count
+  return curse_list.count
 end
 
 

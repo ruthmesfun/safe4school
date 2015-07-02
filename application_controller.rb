@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require_relative 'models/model.rb'
 
 class ApplicationController < Sinatra::Base
 
@@ -7,14 +8,18 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
+  post '/analyze' do
+    @artist = params[:artist].gsub(" ", "_")
+    @song = params[:song].gsub(" ", "_")
   #Connect to the API
-  raw_api_data = open("http://lyrics.wikia.com/api.php?artist=Lil_Wayne&song=Fireman&fmt=realjson").read
+    raw_api_data = open("http://lyrics.wikia.com/api.php?artist=#{@artist}&song=#{@song}&fmt=realjson").read
  
   #Convert them to jason
-  json_data_hash = JSON.parse(raw_api_data)
+    json_data_hash = JSON.parse(raw_api_data)
 
-  #
-  lyrics_string = json_data_hash["lyrics"]
-  puts lyrics_string
+  #pulls down lyrics
+    @lyrics_string = json_data_hash["lyrics"]
+    erb:analyze
+  end
 
 end
