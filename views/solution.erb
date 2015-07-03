@@ -5,7 +5,7 @@
   <title>Safe 4 Schools- Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <script src= "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<!--   <link rel="stylesheet" type="text/css" href="/css/style.css"/> -->
+<!--   <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
 </head>
 <body>
   <!--/// HEADER /// -->
@@ -50,30 +50,12 @@
     </video>
     <!--// FEATURE ARTICLE //-->
     <div id="wrapper" class="clearfix">
-      <h2 class = "feature">Add the Song and Artist. 
+      <h2 class = "feature"> <!-- Your song is.. -->
       <br>
       <br>
       </h2>
       <section>
-        <form method="POST" action="/solution">
-          Artist: 
-          <input type="text" name="artist">
-          <br>
-          <br>
-           Song: 
-          <input type="text" name="song">
-          <br>
-          <br>
-          Dirty Words:
-          <input type="text" name="dirty_words">
-          <br>
-          <br>
-          Pre-Created Dirty Word List  <input type="checkbox" name="dirty_word_list" value="dirty_word_list">
-          <br>
-          <br>
-          <br>
-          <input type="submit" value="Submit">
-        </form>
+        There are <%=@dirty_count%> dirty words in this song!
       </section>
     </div>
   </section>
