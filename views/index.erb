@@ -23,10 +23,8 @@
     <!--/// Nav Bar ///-->
     <div id="nav_bar" class = "light-fade">
       <nav class = "clearfix">
-        <a href="index.erb">HOME</a>
-        <a 
-        <a href="about.html">ABOUT</a>
-        <a href="contact.erb">CONTACT</a>
+        <a href="/">HOME</a>
+
       </nav>
     </div>
     <!--/// End of Nav Bar ///-->
@@ -45,9 +43,9 @@
 
   <!--// BODY //-->
   <section class="wrapper clearfix">
-    <video id="background_video" width="100%" loop="loop" preload="auto" autoplay="true">
-      <source src="Alright.mp4" type="video/mp4">
-    </video>
+    <iframe id="background_video" width="100%" loop="loop" preload="auto" autoplay="true">
+          <source src="/video/Alright.mp4" type="video/mp4">
+    </iframe>
     <!--// FEATURE ARTICLE //-->
     <div id="wrapper" class="clearfix">
       <h2 class = "feature">
@@ -56,16 +54,20 @@
       </h2>
       <section>
         <form method="POST" action="/solution">
-          <input type="text" name="artist" value="ARTIST">
+          <input type="text" name="artist" placeholder="ARTIST" size="30">
           <br>
           <br>
-          <input type="text" name="song" value="SONG">
+          <br>
+          <input type="text" name="song" placeholder="SONG" size="30">
           <br>
           <br>
-          <input type="text" name="dirty_words" value="DIRTY WORDS">
+          <br>
+          <input type="text" name="dirty_words" placeholder="DIRTY WORDS" size="30">
           <br>
           <br>
-          <p>Pre-Created Dirty Word List</p>  <input type="checkbox" name="dirty_word_list" value="dirty_word_list">
+          <br>
+          <!--Pre-Created Dirty Word List: <input type="checkbox" name="dirty_word_list" value="dirty_word_list_value"> -->
+          <br>
           <br>
           <br>
           <br>
@@ -73,6 +75,7 @@
         </form>
       </section>
     </div>
+
   </section>
   <!--//End of BODY -->
 

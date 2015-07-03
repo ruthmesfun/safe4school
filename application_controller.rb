@@ -11,15 +11,17 @@ class ApplicationController < Sinatra::Base
   post '/solution' do
     @artist = params[:artist].gsub(" ", "_")
     @song = params[:song].gsub(" ", "_")
+    #@pre_determined_list = params[:pre_list_boolean]
+    #puts "#{pre_determined_list}"
     @dirty_words = params[:dirty_words].split(" ")
-#   #Connect to the API
-#     raw_api_data = open("http://lyrics.wikia.com/api.php?artist=#{@artist}&song=#{@song}&fmt=realjson").read
+  #Connect to the API
+    raw_api_data = open("http://lyrics.wikia.com/api.php?artist=#{@artist}&song=#{@song}&fmt=realjson").read
  
-#   #Convert them to jason
-#     json_data_hash = JSON.parse(raw_api_data)
+  #Convert them to jason
+    json_data_hash = JSON.parse(raw_api_data)
 
-#   #pulls down lyrics
-#     @lyrics = json_data_hash["lyrics"]
+  #pulls down lyrics
+    @lyrics = json_data_hash["lyrics"]
     
 #     *****Pulling lyrics down using Lyricfy gem*********
     
@@ -27,7 +29,7 @@ class ApplicationController < Sinatra::Base
     fetcher = Lyricfy::Fetcher.new
     
     #fetcher.search will return an Lyricfy::Song object.  One of the Song methods is "lines" which returns all the lyrics of the song in the form of an array.  Other Song methods include #title #author and #body.
-    @lyrics = fetcher.search @artist, @song
+#     @lyrics = fetcher.search @artist, @song
     if @lyrics != nil
       @dirty_count = dirty_word_counter(@lyrics.lines.join(" "), @dirty_words)
       @user_respone = "There are #{@dirty_count} dirty words in this song!"

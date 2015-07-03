@@ -24,16 +24,14 @@
     <div id="nav_bar" class = "light-fade">
       <nav class = "clearfix">
         <a href="index.erb">HOME</a>
-        <a 
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+
       </nav>
     </div>
     <!--/// End of Nav Bar ///-->
 
     <!--// Title & Logo //-->
     <div>
-      <a href="index.erb" id="logo">
+      <a href="/" id="logo">
         <h1>SAFE-4-SCHOOLS</h1> 
         <h2>Is this song classroom appropriate?</h2>
       </a>
@@ -45,19 +43,20 @@
 
   <!--// BODY //-->
   <section class="wrapper clearfix">
-    <video id="background_video" width="100%" loop="loop" preload="auto" autoplay="true">
-      <source src="Alright.mp4" type="video/mp4">
-    </video>
+
     <!--// FEATURE ARTICLE //-->
     <div id="wrapper" class="clearfix">
       <h2 class = "feature"> <!-- Your song is.. -->
       <br>
       <br>
-      </h2>
       <section>
         <%=@user_respone%>
       </section>
+      </h2>
     </div>
+    <iframe id="background_video" width="100%" loop="loop" preload="auto" autoplay="true">
+          <source src="/video/Alright.mp4" type="video/mp4">
+    </iframe>
   </section>
   <!--//End of BODY -->
 

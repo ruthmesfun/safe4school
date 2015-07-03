@@ -114,7 +114,7 @@ nav {
 /********************
       BODY
 ********************/
-<!--video#background_video{
+iframe#background_video{
 position: fixed;
 top: 50%;
 left: 50%;
@@ -125,14 +125,13 @@ height: auto;
 z-index: -100;
 -webkit-transform: translateX(-50%) translateY(-50%);
 transform: translateX(-50%) translateY(-50%);
-/*background: url(polina.jpg) no-repeat;*/
 background-size: cover;
-} -->
-
-body {
+border: none;
+}
+<!--body {
   background-image: url('img/Alright.gif');
   background-size: cover;
-}
+} -->
 
 .feature{
   color: #fff;
@@ -152,6 +151,10 @@ form {
 form p{
   color: #fff;
 
+}
+
+input{
+  line-height: 2em
 }
 
 
