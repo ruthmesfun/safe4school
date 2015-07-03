@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'open-uri'
 require './application_controller'
-require 'lyricfy'
+#require 'lyricfy'
 
 run ApplicationController
 

@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
 #     *****Pulling lyrics down using Lyricfy gem*********
     
     #creates a new instance of the Fetcher class that allows for searching for lyrics
-    fetcher = Lyricfy::Fetcher.new
+    #fetcher = Lyricfy::Fetcher.new
     
     #fetcher.search will return an Lyricfy::Song object.  One of the Song methods is "lines" which returns all the lyrics of the song in the form of an array.  Other Song methods include #title #author and #body.
 #     @lyrics = fetcher.search @artist, @song
